@@ -1,0 +1,49 @@
+{
+  "name": "server-api",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "build": "rm -rf dist && tsc",
+    "post:build": "cp .env ./dist",
+    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "start": "node dist/src/index.js",
+    "migration:generate": "NODE_OPTIONS='--require ts-node/register' npx typeorm migration:generate -d ./src/lib/data-source/data-source.utils.ts ./src/db/migrations/InitialMigration",
+    "migration:run": "NODE_OPTIONS='--require ts-node/register' npx typeorm migration:run -d ./src/lib/data-source/data-source.utils.ts",
+    "migration:rollback": "NODE_OPTIONS='--require ts-node/register' npx typeorm migration:revert -d ./src/lib/data-source/data-source.utils.ts",
+    "seed:run": "NODE_OPTIONS='--require ts-node/register' npx typeorm-seeding seed -d ./src/lib/data-source/data-source.utils.ts ./src/db/seeders/*.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/jsonwebtoken": "^9.0.7",
+    "bcrypt": "^5.1.1",
+    "class-validator": "^0.14.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.12.0",
+    "typeorm": "^0.3.20",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.3.0",
+    "@jorgebodega/typeorm-seeding": "^7.1.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.0",
+    "@types/faker": "^6.6.8",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.10.5",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.2"
+  }
+}

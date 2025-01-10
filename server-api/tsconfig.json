@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                     // Target ES6 or above
+    "module": "commonjs",                // Required for Node.js compatibility
+    "lib": ["ES6", "DOM"],               // Include modern libraries
+    "strict": true,                      // Enable strict type-checking
+    "esModuleInterop": true,             // Ensure compatibility with CommonJS modules
+    "skipLibCheck": true,                // Skip type checking for node_modules
+    "outDir": "./dist",                  // Output directory for compiled files
+    "resolveJsonModule": true,           // Allow importing JSON files
+    "experimentalDecorators": true,      // Required for TypeORM decorators
+    "emitDecoratorMetadata": true        // Required for TypeORM decorators
+  },
+  "include": ["src/**/*.ts", "./src/utils/types/types.d.ts"],
+  "exclude": ["node_modules", "dist"]            // Exclude dependencies
+}
