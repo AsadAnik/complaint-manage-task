@@ -51,7 +51,7 @@ A TypeScript-based ticket management system designed for customers and admins. T
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/AsadAnik/complaint-manage-task.git
-cd ticket-management-system
+cd complaint-manage-task
 ```
 
 ### 2. Install Dependencies
